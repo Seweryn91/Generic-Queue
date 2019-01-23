@@ -1,3 +1,5 @@
+import exceptions.EmptyQueueException;
+
 public class Queue<T> {
 
     class Node {
@@ -51,7 +53,11 @@ public class Queue<T> {
         }
     }
 
-    public T dequeue() {
+    public T dequeue() throws EmptyQueueException {
+        if (this.size < 1) {
+            throw new EmptyQueueException("Queue is empty!");
+        }
+
         Node removedNode = this.head;
         this.head = this.head.getNextNode();
 
