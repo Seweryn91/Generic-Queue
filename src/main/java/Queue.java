@@ -1,14 +1,14 @@
-public class Queue {
+public class Queue<T> {
 
     class Node {
-        private String value;
+        private T value;
         private Node nextNode;
 
-        public Node(String value) {
+        public Node(T value, Integer priority) {
             this.value = value;
         }
 
-        public String getValue() {
+        public T getValue() {
             return this.value;
         }
 
@@ -20,4 +20,6 @@ public class Queue {
             this.nextNode = node;
         }
     }
+
+
 }
