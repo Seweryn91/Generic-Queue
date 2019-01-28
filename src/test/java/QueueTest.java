@@ -40,9 +40,16 @@ class QueueTest {
     @DisplayName("Test dequeue on empty queue")
     void dequeueTest_emptyQueue() {
         Queue queue = new Queue();
-
         assertThrows(EmptyQueueException.class, () -> queue.dequeue());
 
+    }
+
+    @Test
+    @DisplayName("Test head")
+    void dequeueTest_testHead() throws EmptyQueueException {
+        Queue queue = createQueue(3);
+        String expectedHead = "0";
+        assertEquals(expectedHead, queue.dequeue().toString());
     }
 
 
