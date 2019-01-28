@@ -59,8 +59,8 @@ public class Queue<T> {
         }
 
         Node removedNode = this.head;
-        this.head = this.head.getNextNode();
 
+        this.head = this.head.getNextNode();
         this.size--;
 
         return removedNode.getValue();
