@@ -1,3 +1,4 @@
+import exceptions.EmptyQueueException;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
@@ -23,6 +24,15 @@ class QueueTest {
 
         String expectedResult = "Johann";
         String actualResult = queue.peek();
+        assertEquals(expectedResult, actualResult);
+    }
+
+    @Test
+    @DisplayName("Test dequeue")
+    void dequeueTest() throws EmptyQueueException {
+        Queue queue = createQueue(10);
+        String expectedResult = "0";
+        String actualResult = queue.dequeue().toString();
         assertEquals(expectedResult, actualResult);
     }
 
