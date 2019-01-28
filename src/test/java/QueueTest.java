@@ -15,6 +15,13 @@ class QueueTest {
     }
 
     @Test
+    @DisplayName("Test peek")
+    void queueTest_peek() {
+        Queue queue = createQueue(3);
+        assertEquals("0", queue.peek().toString());
+    }
+
+    @Test
     @DisplayName("Test enqueue with priority")
     void enqueueTest_withPriority() {
         Queue<String> queue = new Queue<>();
