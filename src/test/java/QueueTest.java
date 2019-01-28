@@ -46,10 +46,18 @@ class QueueTest {
 
     @Test
     @DisplayName("Test head")
-    void dequeueTest_testHead() throws EmptyQueueException {
+    void queueTest_testHead() throws EmptyQueueException {
         Queue queue = createQueue(3);
         String expectedHead = "0";
-        assertEquals(expectedHead, queue.dequeue().toString());
+        assertEquals(expectedHead, queue.peek().toString());
+    }
+
+    @Test
+    @DisplayName("Test size")
+    void queueTest_testSize() {
+        Queue queue = createQueue(3);
+        int expectedSize = 3;
+        assertEquals(expectedSize, queue.size());
     }
 
 
