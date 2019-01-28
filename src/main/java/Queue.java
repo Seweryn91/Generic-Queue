@@ -83,7 +83,7 @@ public class Queue<T> {
             node.setNextNode(currentNode);
             this.head = node;
         } else {
-            Node nextNode = currentNode;
+            Node nextNode = currentNode.getNextNode();
             while (nextNode != null && nextNode.getPriority() >= node.getPriority()) {
                 currentNode = currentNode.getNextNode();
                 nextNode = nextNode.getNextNode();
