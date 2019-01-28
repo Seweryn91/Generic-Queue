@@ -36,7 +36,7 @@ public class Queue<T> {
 
     private Node head;
     private Node tail;
-    private int size = 1;
+    private int size = 0;
 
     public void enqueue(T element) {
         enqueue(element, -1);
@@ -51,6 +51,8 @@ public class Queue<T> {
         } else {
             insertNode(newNode);
         }
+
+        this.size++;
     }
 
     public T dequeue() throws EmptyQueueException {
