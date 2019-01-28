@@ -36,6 +36,15 @@ class QueueTest {
         assertEquals(expectedResult, actualResult);
     }
 
+    @Test
+    @DisplayName("Test dequeue on empty queue")
+    void dequeueTest_emptyQueue() {
+        Queue queue = new Queue();
+
+        assertThrows(EmptyQueueException.class, () -> queue.dequeue());
+
+    }
+
 
     @SuppressWarnings("unchecked")
     @Test
